@@ -8,7 +8,7 @@ const searchBox = document.querySelector('input#search-box');
 const countryList = document.querySelector('.country-list');
 
 searchBox.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
-Notify.init({position: 'center-top'});
+Notify.init({ position: 'center-top', showOnlyTheLastOne: true });
 
 function onInput() {
   const searchString = searchBox.value.trim();
