@@ -3,7 +3,7 @@ function fetchCountries(name) {
   const filter = 'fields=name,capital,population,flags,languages';
 
   return fetch(`${URL}/${name}?${filter}`).then(response => {
-    if (response.ok === false) {
+    if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
     }
     return response.json();
